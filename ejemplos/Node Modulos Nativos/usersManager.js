@@ -1,15 +1,17 @@
 const crypto = require('crypto')
 const fs = require('fs')
-
+const SECRET =  "CoderCoder123"
 // fs.readfile
-
-
 
 class userManager{
     static #usuarios = []
 
     static getUsuarios(){
         return this.#usuarios
+    }
+
+    static #generaHash(password){
+        return crypto.createHmac("sha256", SECRET).update(password).digest("hex")
     }
 
     static addUser(nombre, email, password){
@@ -42,6 +44,8 @@ class userManager{
             id = Math.max(...this.#usuarios.map(d=> d.id)) + 1
         }
 
+        password = this.#generaHash(password)
+
         let nuevoUser = {
             id,
             nombre,
@@ -52,12 +56,28 @@ class userManager{
         this.#usuarios.push(nuevoUser)
         return nuevoUser
     }
+
+    static login(email, password){
+        password = this.#generaHash(password)
+
+        let usuario = this.#usuarios.find(d=> d.email == email && d.password == password)
+        if(!usuario){
+            console.log('Credenciales Incorrectas')
+            return
+        }
+
+        console.log(`Bienvenido ${usuario.nombre}`)
+    }
 }
 
-userManager.addUser("Juan", "juan@test.com", "1234")
-userManager.addUser("Tomas", 'tomi@test.com', '1234')
-userManager.addUser("Tomas1", 'tomi@test.com', '1234')
-userManager.addUser("Tomas", 'tomitest.com', '1234')
-userManager.addUser("Tom", 'tomi@test.com', '1234')
+userManager.addUser("Juan", "juan@test.com", "1234") // bien
+userManager.addUser("Tomas", 'tomi@test.com', '4567') // bien 
+userManager.addUser("Tomas1", 'tomi@test.com', '1234') // mal, nombre con num
+userManager.addUser("Tomas", 'tomitest.com', '1234') // mal, email inválido
+userManager.addUser("Tom", 'tomi@test.com', '1234') // mal, email ya existe
 
 console.log(userManager.getUsuarios())
+
+userManager.login('carlos@test.com', '1234') // mal, credenciales incorrectas
+userManager.login('tomi@test.com', '4567') // bien
+userManager.login('tomi@test.com', '999') // mal, credenciales incorrectas
