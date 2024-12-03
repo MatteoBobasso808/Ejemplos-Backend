@@ -1,9 +1,13 @@
 const http = require("http")
+const url = require("url")
 const PORT = 3000 // o 8080
 
 const server = http.createServer((req, res) => { // req: petición, res: respuesta
+    
+    const urlParse = url.parse(req.url, true)
+    console.log(urlParse)
+    
     if(req.url === "/heroes") {
-
         let heroes = [
             {nombre: "Batman", profesion: "Millonario", edad: 30},
             {nombre: "Superman", profesion: "Periodista", edad: 35},
