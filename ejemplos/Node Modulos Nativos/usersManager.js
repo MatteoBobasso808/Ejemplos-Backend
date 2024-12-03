@@ -1,7 +1,5 @@
 const crypto = require('crypto')
-const fs = require('fs')
 const SECRET =  "CoderCoder123"
-// fs.readfile
 
 class userManager{
     static #usuarios = []
