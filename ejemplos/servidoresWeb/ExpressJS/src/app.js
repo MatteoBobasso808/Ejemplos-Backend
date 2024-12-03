@@ -3,7 +3,6 @@ const PORT = 3000
 const app = express()
 
 app.get('/', (req, res) => {
-    
     res.send('Server realizado en Express (en lugar de usar módulo HTTP...)')
 })
 
@@ -13,7 +12,6 @@ app.get('/text', (req, res) => {
 })
 
 app.get('/contacto', (req, res) => {
-    
     res.send('<h2 style=color:blue;> Página de Contacto </h2>')
 })
 
@@ -25,7 +23,6 @@ app.get("/heroes", (req, res) => {
         {nombre: "Mujer Maravilla", profesion: "Diosa", edad: 100},
         {nombre: "Linterna Verde", profesion: "Piloto", edad: 32}
     ]
-
     res.send(heroes)
 })
 
