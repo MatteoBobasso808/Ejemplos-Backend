@@ -26,6 +26,10 @@ app.get("/heroes", (req, res) => {
     res.send(heroes)
 })
 
+app.get("*", (req, res) => {
+    res.send("Error 404 - Página no encontrada")
+})
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`)
 })
