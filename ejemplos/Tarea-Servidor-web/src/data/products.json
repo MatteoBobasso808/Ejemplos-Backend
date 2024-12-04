@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Raqueta de Tenis",
+        "price": 2300 
+    },
+    {
+        "id": 2,
+        "name": "Zapatillas",
+        "price": 2000 
+    },
+    {
+        "id": 3,
+        "name": "Remera de Boca",
+        "price": 2500 
+    },
+    {
+        "id": 4,
+        "name": "Bicicleta",
+        "price": 1300 
+    },
+    {
+        "id": 5,
+        "name": "Almohada",
+        "price": 200 
+    },
+    {
+        "id": 6,
+        "name": "Jean",
+        "price": 1700 
+    },
+    {
+        "id": 7,
+        "name": "Auriculares",
+        "price": 1000 
+    },
+    {
+        "id": 8,
+        "name": "Pelota",
+        "price": 1500 
+    },
+    {
+        "id": 9,
+        "name": "Tenedor",
+        "price": 500 
+    },
+    {
+        "id": 10,
+        "name": "Pulsera",
+        "price": 800 
+    }
+]
