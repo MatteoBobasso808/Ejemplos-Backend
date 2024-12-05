@@ -1,3 +1,4 @@
+// dao = data access object
 import fs from "fs"
 
 export class usuariosManager{
