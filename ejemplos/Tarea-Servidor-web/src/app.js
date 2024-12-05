@@ -27,15 +27,31 @@ app.get('/products/:id', async (req, res) => { // Funcion handler de la ruta '/p
     id = Number(id)
 
     if(isNaN(id)){
-        return res.send('El id debe ser un número')
+        res.setHeader('Content-Type', 'application/json')
+        return res.status(400).send({error: 'El id debe ser un número'})
     }
 
     products = products.find(product => product.id === id)
     if(!products){
-        return res.send('El producto que buscas no existe')
+        res.setHeader('Content-Type', 'application/json')
+        return res.status(404).send({error: 'El producto que buscas no existe'})
     }
 
-    res.send(products)
+    res.status(200).send(products)
+})
+
+app.get('/product/:name', async (req, res) => { // Funcion handler de la ruta '/product/:name'
+    let products = await productManager.getProducts()
+
+    let {name} = req.params
+
+    products = products.find(product => product.name.toLowerCase() === name.trim().toLowerCase())
+    if(!products){
+        res.setHeader('Content-Type', 'application/json')
+        return res.status(404).send({error: 'El producto que buscas no existe'})
+    }
+
+    res.status(200).send(products)
 })
 
 app.listen(PORT, () => { // Funcion para levantar el servidor
