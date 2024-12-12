@@ -1,7 +1,7 @@
 import express from 'express'
 import {productsManager} from "./dao/productsManager.js"
 
-const PORT = 8080
+const PORT = 3000
 const app = express()
 
 const rutaData = "./src/data/products.json" 
