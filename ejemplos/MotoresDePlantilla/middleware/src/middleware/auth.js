@@ -6,5 +6,6 @@ export const authMiddleware = (req, res, next) => {
         return res.status(401).send({error: 'Crecenciales incorrectas'});
     }
 
+    req.rol = 'admin';
     next()
 }

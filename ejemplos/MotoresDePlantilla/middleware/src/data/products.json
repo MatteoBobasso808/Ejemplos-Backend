@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "nombre": "Laptop Gamer",
+      "descripcion": "Laptop de alto rendimiento con procesador Intel i7, 16GB de RAM y tarjeta gráfica NVIDIA GTX 3060.",
+      "precio": 1500.00,
+      "categoria": "Tecnología",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "Auriculares Inalámbricos",
+      "descripcion": "Auriculares Bluetooth con cancelación de ruido activa y hasta 30 horas de batería.",
+      "precio": 120.00,
+      "categoria": "Accesorios",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Cámara Fotográfica",
+      "descripcion": "Cámara réflex con sensor de 24MP, lente intercambiable y grabación en 4K.",
+      "precio": 900.00,
+      "categoria": "Fotografía",
+      "disponible": false
+    },
+    {
+      "id": 4,
+      "nombre": "Silla Ergonómica",
+      "descripcion": "Silla de oficina ajustable con soporte lumbar y material transpirable.",
+      "precio": 250.00,
+      "categoria": "Muebles",
+      "disponible": true
+    },
+    {
+      "id": 5,
+      "nombre": "Smartphone",
+      "descripcion": "Teléfono inteligente con pantalla AMOLED de 6.7 pulgadas, 128GB de almacenamiento y cámara de 108MP.",
+      "precio": 800.00,
+      "categoria": "Tecnología",
+      "disponible": true
+    },
+    {
+      "id": 6,
+      "nombre": "Reloj Inteligente",
+      "descripcion": "Reloj inteligente con monitor de actividad física, seguimiento del sueño y resistencia al agua.",
+      "precio": 200.00,
+      "categoria": "Accesorios",
+      "disponible": true
+    }
+  ]
+  
